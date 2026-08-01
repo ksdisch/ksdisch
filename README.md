@@ -8,15 +8,6 @@ Everything below links to a repo you can clone and run.
 
 ---
 
-### Data engineering
-
-| | |
-|---|---|
-| **[clinical-data-etl](https://github.com/ksdisch/clinical-data-etl)** | Three heterogeneous healthcare datasets → pandera validation → Postgres → dbt → **three independent star schemas**, orchestrated with Prefect. 56 pytest tests, 98 dbt tests, an SCD2 snapshot, and **10 ADRs** explaining why each design call went the way it did. |
-| **[personal-health-elt](https://github.com/ksdisch/personal-health-elt)** | Apple Health → Postgres → dbt (27 models) → Streamlit. Idempotent loaders, range-joined HR zones, training-load and recovery marts. The apex mart is a **versioned public API** with three downstream consumers, so schema changes move in lockstep. |
-
----
-
 ### AI-reliability research
 
 > I built a repeatable reproduce-and-measure engine and ran it on recent agent-reliability and
@@ -41,10 +32,19 @@ projects as one body of work and states plainly what's unfinished.
 
 | | |
 |---|---|
-| **[task-manager-mcp](https://github.com/ksdisch/task-manager-mcp)** | A local MCP server exposing Todoist to Claude. Built it after finding **87 of 102** of my own invocations were raw API calls for queries Zapier couldn't express. Tests are larger than the implementation. |
 | **[claude-config](https://github.com/ksdisch/claude-config)** | My version-controlled Claude Code setup — slash commands, skills, subagents, global instructions. |
+| **[task-manager-mcp](https://github.com/ksdisch/task-manager-mcp)** | A local MCP server exposing Todoist to Claude. Built it after finding **87 of 102** of my own invocations were raw API calls for queries Zapier couldn't express. Tests are larger than the implementation. |
 | **[constellation](https://github.com/ksdisch/constellation)** | Asymmetric two-player co-op: a Phaser platformer on the laptop, React puzzles on your phone, glued by a websocket relay. |
 | **[stopwatch](https://github.com/ksdisch/stopwatch)** — [live](https://ksdisch.github.io/stopwatch/) | Offline-first PWA with retroactive start, Firestore sync behind per-user security rules, and a Capacitor iOS build. |
+
+---
+
+### Data engineering
+
+| | |
+|---|---|
+| **[clinical-data-etl](https://github.com/ksdisch/clinical-data-etl)** | Three heterogeneous healthcare datasets → pandera validation → Postgres → dbt → **three independent star schemas**, orchestrated with Prefect. 56 pytest tests, 98 dbt tests, an SCD2 snapshot, and **10 ADRs** explaining why each design call went the way it did. |
+| **[personal-health-elt](https://github.com/ksdisch/personal-health-elt)** | Apple Health → Postgres → dbt (27 models) → Streamlit. Idempotent loaders, range-joined HR zones, training-load and recovery marts. The apex mart is a **versioned public API** with three downstream consumers, so schema changes move in lockstep. |
 
 ---
 
