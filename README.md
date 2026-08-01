@@ -10,17 +10,26 @@ Everything below links to a repo you can clone and run.
 
 ### AI-reliability research
 
-> I built a repeatable reproduce-and-measure engine and ran it on recent agent-reliability and
-> interpretability papers — pre-registered, judge-free, real confidence intervals, **nulls reported
-> as headlines**.
+> I built a repeatable reproduce-and-measure engine and ran it in two lanes — reproductions of
+> recent agent-reliability papers, and a model-internals lineage built on an independently
+> validated Jacobian lens — pre-registered, judge-free, real confidence intervals, **nulls
+> reported as headlines**.
 
-**Start here → [the portfolio index](https://github.com/ksdisch/portfolio)**, which frames all seven
-projects as one body of work and states plainly what's unfinished.
+**Start here → [the portfolio index](https://github.com/ksdisch/portfolio)**, which frames all
+eight projects as one body of work and states plainly what's unfinished.
+
+**Model internals — the J-lens lineage** (build the instrument → map with it → audit with it):
 
 | | |
 |---|---|
 | **[dim-stage](https://github.com/ksdisch/dim-stage)** | Is Anthropic's "global workspace" readable in *small* models? I rebuilt their Jacobian lens independently, validated it **bitwise against their reference**, and got a **pre-registered null** across Qwen2.5 0.5B–3B. |
 | **[mute-map](https://github.com/ksdisch/mute-map)** | The one effect that survived every control in `dim-stage`: delete a concept's lens direction from the late band and the model **can't say that word** — 0/34 on the diagonal vs 363/374 off it. No paper behind this one, which the card says before you can. |
+| **[hush-gauge](https://github.com/ksdisch/hush-gauge)** | Can you tell from the activations that a model is about to leak a secret it was ordered to keep — even on the trials where it never says it? In progress: **M0 complete, G0 passes on all three scales.** |
+
+**Agent reliability — behavioral reproductions:**
+
+| | |
+|---|---|
 | **[forge-gap](https://github.com/ksdisch/forge-gap)** | How much does each reliability guardrail actually buy on multi-step tool-calling? 67.5% → 100%, **+32.5pp** [+17.3, +48.0]. The gap is *injected*, and the chart says so. |
 | **[decay-pin](https://github.com/ksdisch/decay-pin)** | A safety rule in context is silently abandoned once compaction evicts it — **0/20 → 20/20** violations. Re-pinning the same ~50 tokens restores it to 0/40. |
 | **[lossy-wall](https://github.com/ksdisch/lossy-wall)** | A memory note that keeps a wrong conclusion but drops its source is **worse than no memory** — the model re-emits the stale answer instead of abstaining. Cross-checked against the paper author's own harness: AGREE. |
